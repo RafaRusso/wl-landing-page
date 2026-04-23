@@ -14,9 +14,9 @@ const LocationMap = () => {
           <p className="text-secondary text-xl font-medium">Encontre o consultório mais próximo de você</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-10">
+        <div className={`grid gap-10 ${locations.length === 1 ? 'max-w-3xl mx-auto' : 'md:grid-cols-2'}`}>
           {locations.map((loc) => (
-            <div key={loc.city} className="bg-white rounded-[2.5rem] overflow-hidden card-shadow border border-primary/5 flex flex-col group">
+            <div key={loc.city} className="bg-white dark:bg-primary/10 rounded-[2.5rem] overflow-hidden card-shadow border border-primary/5 flex flex-col group">
               <div className="p-10 pb-6">
                 <div className="flex items-center gap-2 text-accent mb-2">
                   <MapPin size={18} />
@@ -40,7 +40,7 @@ const LocationMap = () => {
                 />
               </div>
 
-              <div className="p-6 bg-secondary/5 flex justify-end">
+              <div className="p-6 bg-secondary/5 dark:bg-primary/20 flex justify-end">
                 <a 
                   href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(loc.address)}`} 
                   target="_blank" 
