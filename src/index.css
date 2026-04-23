@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 96%;
+    --foreground: 280 34% 26%;
+    --primary: 280 34% 26%;
+    --primary-foreground: 40 33% 98%;
+    --secondary: 158 12% 40%;
+    --secondary-foreground: 210 40% 98%;
+    --accent: 13 60% 56%;
+    --accent-foreground: 210 40% 98%;
+    --radius: 2rem;
+    --shadow-soft: 0 10px 30px -10px rgba(74, 44, 90, 0.08);
+    --shadow-card: 0 20px 40px -15px rgba(74, 44, 90, 0.12);
+  }
+
+  .dark {
+    --background: 280 34% 15%;
+    --foreground: 40 33% 96%;
+    --primary: 40 33% 96%;
+    --primary-foreground: 280 34% 26%;
+    --secondary: 158 12% 60%;
+    --secondary-foreground: 280 34% 15%;
+    --accent: 13 60% 65%;
+    --accent-foreground: 280 34% 15%;
+  }
+
+  * {
+    border-color: rgba(74, 44, 90, 0.1);
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .container-narrow {
+    @apply container mx-auto px-6 md:px-12 max-w-7xl;
+  }
+  .eyebrow {
+    @apply text-sm font-bold uppercase tracking-widest text-accent/80 mb-4;
+  }
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(74, 44, 90, 0.05);
+}
+
+.shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-card);
+}
